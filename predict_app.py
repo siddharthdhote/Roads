@@ -39,7 +39,7 @@ def preprocess_image(image,target_size):
 print("* Loading Keras model...")
 get_model()
 
-@app.route("/predict", methods=["GET","POST"])
+@app.route("/", methods=["GET","POST"])
 def predict():
     message=request.get_json(force=True)
     encoded=message['image']
