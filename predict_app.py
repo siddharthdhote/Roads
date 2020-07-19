@@ -22,6 +22,10 @@ from flask import render_template
 
 app= Flask(__name__, template_folder='templates)
 
+@app.route("/",methods=["GET"])
+def index():
+    return render_template('predict.html')
+
 def get_model():
     global model
     model=load_model('RoadCrack.h5')
