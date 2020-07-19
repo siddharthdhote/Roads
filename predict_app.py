@@ -22,10 +22,6 @@ from flask import render_template
 
 app= Flask(__name__)
 
-@app.route("/",methods=["GET"])
-def index():
-    return render_template('predict.html')
-
 def get_model():
     global model
     model=load_model('RoadCrack.h5')
@@ -42,6 +38,10 @@ def preprocess_image(image,target_size):
 
 print("* Loading Keras model...")
 get_model()
+
+@app.route("/",methods=["GET"])
+def index():
+    return render_template('predict.html')
 
 @app.route("/predict", methods=["POST"])
 def predict():
