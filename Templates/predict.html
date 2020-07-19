@@ -37,7 +37,7 @@
 				image:base64Image
 			}
 			console.log(message);
-			$.post("https://127.0.0.1:5000",JSON.stringify(message), function(response){
+			$.post("https://road-crack-prediction.herokuapp.com/",JSON.stringify(message), function(response){
 				$("#Negative-Prediction").text(response.prediction.Negative.toFixed(6));
 				$("#Positive-Prediction").text(response.prediction.Positive.toFixed(6));
 				console.log(response);
