@@ -1,4 +1,5 @@
 Flask==1.1.1
+Gunicorn-20.0.4
 html5lib==1.0.1
 hypothesis==5.5.4
 imageio==2.6.1
