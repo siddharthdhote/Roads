@@ -20,11 +20,7 @@ from flask import jsonify
 from flask import Flask
 from flask import render_template
 
-app= Flask(__name__, template_folder='templates)
-
-@app.route("/",methods=["GET"])
-def index():
-    return render_template('predict.html')
+app= Flask(__name__)
 
 def get_model():
     global model
