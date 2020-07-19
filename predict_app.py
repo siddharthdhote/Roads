@@ -26,10 +26,6 @@ def get_model():
     global model
     model=load_model('RoadCrack.h5')
     print("* Model loaded!")
-
-@app.route("/",methods=["GET"])
-def index():
-    return render_template('predict.html')
     
 def preprocess_image(image,target_size):
     if image.mode != "RGB":
@@ -61,8 +57,6 @@ def predict():
     }
     
     return jsonify(response)
-
-return render_template('predict.html')
 
 if __name__=="__main__":
     app.debug=True
